@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: 1.0.0/001-xml-create-table-users.xml
+      author: HowWow
+      relativeToChangelogFile: true
+  - include:
+      file: 1.0.0/002-yaml-add-user-profile.yaml
+      author: HowWow
+      relativeToChangelogFile: true
+  - include:
+      file: 1.0.0/003-sql-add-user-status-roles.sql
+      author: HowWow
+      relativeToChangelogFile: true

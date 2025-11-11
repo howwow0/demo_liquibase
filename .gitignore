@@ -1,0 +1,63 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+
+src/main/resources/db/changelog/
+├── db.changelog-master.xml                          # главный мастер файл
+└── releases/                                        # папка с релизами
+    ├── release-1.0/                                 # релиз 1.0
+    │   ├── release-1.0-changelog.xml                # мастер ченджлог релиза 1.0
+    │   └── changes/                                 # миграции релиза 1.0
+    │       ├── 001-create-users.xml
+    │       ├── 002-create-products.xml
+    │       └── 003-add-indexes.xml
+    ├── release-1.1/                                 # релиз 1.1
+    │   ├── release-1.1-changelog.xml                # мастер ченджлог релиза 1.1
+    │   └── changes/                                 # миграции релиза 1.1
+    │       ├── 001-add-user-profile.xml
+    │       ├── 002-create-orders.xml
+    │       └── 003-update-schema.xml
+    └── release-1.2/                                 # релиз 1.2
+        ├── release-1.2-changelog.yaml               # мастер ченджлог релиза 1.2 (YAML)
+        └── changes/                                 # миграции релиза 1.2
+            ├── 001-add-payments.xml
+            ├── 002-alter-tables.sql
+            └── 003-insert-data.yaml
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Kotlin ###
+.kotlin

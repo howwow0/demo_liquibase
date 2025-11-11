@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: demo_liquibase
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sa
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  liquibase:
+    image: liquibase/liquibase:4.32.0
+    container_name: liquibase_migration
+    depends_on:
+      - postgres
+    volumes:
+      - ./src/main/resources/db/changelog:/changelog
+    command:
+      - --url=jdbc:postgresql://postgres:5432/demo_liquibase
+      - --searchPath=/changelog
+      - --username=postgres
+      - --password=sa
+      - --driver=org.postgresql.Driver
+      - --changelog-file=db.changelog-master.yaml
+      - update
+volumes:
+  postgres_data:
